@@ -1,0 +1,37 @@
+.dropdown-menu > li > a{
+    color: #ffffff;
+}
+
+.dropdown-menu{
+    background: #e8d2a5;
+}
+
+.nav > li > a{
+    color: #b72826;
+}
+
+.orange > a{
+    background: #d1c7a5;
+    color: #ffffff !important;
+}
+
+/*.row .clearfix > div > img{*/
+    /*width: 180px;*/
+    /*height: 180px;*/
+/*}*/
+
+div.col-md-4.column > a > img{
+    background-color: rgba(0,0,0,0);
+}
+
+footer{
+    position: fixed;
+    bottom:10px;
+    color: #b72826;
+}
+
+body{
+    background: url(../img/bg.jpg) center top repeat;
+}
+
+

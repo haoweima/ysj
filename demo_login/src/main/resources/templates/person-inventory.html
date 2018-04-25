@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>库存管理</title>
+    <link th:href="@{/css/bootstrap.min.css}" href="../static/css/bootstrap.min.css" type="text/css" rel="stylesheet">
+    <link th:href="@{/css/person.css}" href="../static/css/person.css" type="text/css" rel="stylesheet">
+    <!--<link th:href="@{/css/carousel.css}" href="../static/css/carousel.css" rel="stylesheet" type="text/css">-->
+    <script th:src="@{/js/jquery-2.0.3.min.js}" src="../static/js/jquery-2.0.3.min.js"></script>
+    <script th:src="@{/js/bootstrap.min.js}" src="../static/js/bootstrap.min.js"></script>
+    <script th:src="@{/js/jquery-ui.min.js}" src="../static/js/jquery-ui.min.js"></script>
+    <script th:src="@{/js/hideComponent.js}" src="../static/js/hideComponent.js"></script>
+
+    <!--<script th:src="@{/js/modernizr.min.js}" src="../static/js/modernizr.min.js"></script>-->
+    <!--<link th:href="@{/css/style.css}" href="../static/css/style.css" media="screen" rel="stylesheet">-->
+
+</head>
+<body style="background: url(../img/bg.jpg) center top repeat;">
+<div class="container">
+    <div class="row clearfix">
+        <div class="col-md-12 column">
+            <nav class="navbar navbar-default navbar-static-top" role="navigation">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse"
+                            data-target="#bs-example-navbar-collapse-1"><span
+                            class="sr-only">Toggle navigation</span><span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="/Mana/person" style="color: #ffffff; font-size: 24px;">易数家</a>
+                </div>
+
+                <div class="collapse navbar-collapse" style="background: #d1c7a5;" id="bs-example-navbar-collapse-1">
+                    <!--<ul class="nav navbar-nav">-->
+                    <!--<li class="active">-->
+                    <!--<a href="#"></a>-->
+                    <!--</li>-->
+                    <!--</ul>-->
+                    <label hidden="hidden" th:text="${power}" id="power"></label>
+                    <ul class="nav navbar-nav navbar-right" style="margin-right: 5px;">
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle"
+                               data-toggle="dropdown" style="color: #ffffff; font-size: 16px;" th:text="${name} + '▼'">个人中心<strong class="caret"></strong></a>
+                            <ul class="dropdown-menu">
+                                <li hidden="hidden">
+                                    <a href="#">修改密码</a>
+                                </li>
+                                <li>
+                                    <a href="#" onclick="alert('签到成功！请记得签退！')">签到</a>
+                                </li>
+                                <li>
+                                    <a href="#" onclick="alert('签退成功！祝您生活愉快！')">签退</a>
+                                </li>
+                                <li class="divider">
+                                </li>
+                                <li>
+                                    <a href="/Mana/signout">退出</a>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+
+            </nav>
+        </div>
+
+        <div class="col-md-3 column">
+            <ul class="nav nav-stacked nav-pills">
+                <li >
+                    <a href="/Mana/person">快速操作</a>
+                </li>
+                <li>
+                    <a href="/Mana/sale/salePage">销售管理</a>
+                </li>
+                <li>
+                    <a href="/Mana/come/comePage">进货管理</a>
+                </li>
+                <li>
+                    <a href="/Mana/return/returnPage">退换货管理</a>
+                </li>
+                <li class="orange limit">
+                    <a href="/Mana/invent/inventPage">库存管理</a>
+                </li>
+                <li class="limit">
+                    <a href="/Mana/employ/employPage">员工管理</a>
+                </li>
+            </ul>
+        </div>
+        <div class="col-md-6 column">
+            <div class="row clearfix">
+                <div class="col-md-4 column">
+                    <!--库存查询-->
+                    <a href="selectInvent">
+                    <img alt="160x160" src="../img/img-btn-10-01.png"
+                         class="img-thumbnail" th:src="@{/img/img-btn-10-01.png}"/>
+                    </a>
+                </div>
+                <div class="col-md-4 column">
+                    <!--商品查看-->
+                    <a href="selectGoods?employer=1">
+                    <img alt="160x160" src="../img/img-btn-13-01.png"
+                         class="img-thumbnail" th:src="@{/img/img-btn-13-01.png}"/>
+                    </a>
+                </div>
+                <div class="col-md-4 column">
+                    <!--商品新增-->
+                    <a href="addGoodsPage">
+                    <img alt="160x160" src="../img/img-btn-14-01.png"
+                         class="img-thumbnail" th:src="@{/img/img-btn-14-01.png}"/>
+                    </a>
+                </div>
+            </div>
+            <div class="row clearfix">
+                <div class="col-md-4 column">
+                    <!--新增仓库-->
+                    <a href="addVentPage">
+                    <img alt="160x160" src="../img/img-btn-15-01.png"
+                         class="img-thumbnail" th:src="@{/img/img-btn-15-01.png}"/>
+                    </a>
+                </div>
+                <div class="col-md-4 column">
+                    <a href="">
+                    <img alt="160x160" src="../img/img-btn-05-01.png"
+                         class="img-thumbnail" th:src="@{/img/img-btn-05-01.png}"/>
+                    </a>
+                </div>
+                <div class="col-md-4 column">
+                    <a href="">
+                    <img alt="160x160" src="../img/img-btn-05-01.png"
+                         class="img-thumbnail" th:src="@{/img/img-btn-05-01.png}"/>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3 column">
+            <div class="alert alert-success alert-dismissable">
+                <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+                <h4>
+                    小提示！
+                </h4>
+                <strong>仓库管理</strong>  在该页面可以查询库存
+            </div>
+        </div>
+    </div>
+
+    <footer style="position: fixed; bottom:10px;">
+        <p class="pull-right"></p>
+        <p>&copy; Made by Marnon, OUC. &middot; </p>
+    </footer>
+</div>
+</body>
+</html>

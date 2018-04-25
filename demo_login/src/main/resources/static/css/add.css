@@ -1,0 +1,44 @@
+footer{
+    position: fixed;
+    bottom:10px;
+    color: #b72826;
+}
+
+.nav > li > a{
+    color: #b72826;
+}
+
+.orange > a{
+    background: #d1c7a5;
+    color: #ffffff !important;
+}
+
+/*.goodsname{*/
+    /*width: 70%;*/
+/*}*/
+
+/*.goodsnum{*/
+    /*width: 20%;*/
+/*}*/
+
+/*.goodsprice{*/
+    /*width:40%;*/
+/*}*/
+
+.totalnul{
+    width: 80px;
+}
+
+.btn-orange{
+    color:#fff;background-color: #b77d31;border-color: #b72826
+}
+
+.btn-pink{
+    color:#fff;background-color: #b761a3;border-color: #b72826
+}
+
+.btn-purple{
+    color:#fff;background-color: #b7b351;border-color: #b72826
+}
+
+
