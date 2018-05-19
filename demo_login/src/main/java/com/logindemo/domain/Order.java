@@ -13,6 +13,7 @@ public class Order{
     private double income;
     private String type;
     private String ssc;
+    private int employer;
 
     public String getIdOrder() {
         return idOrder;
@@ -68,5 +69,13 @@ public class Order{
 
     public void setSsc(String ssc) {
         this.ssc = ssc;
+    }
+
+    public int getEmployer() {
+        return employer;
+    }
+
+    public void setEmployer(int employer) {
+        this.employer = employer;
     }
 }

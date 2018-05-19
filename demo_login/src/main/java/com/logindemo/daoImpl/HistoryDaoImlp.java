@@ -81,6 +81,19 @@ public class HistoryDaoImlp implements HistoryDao {
         }
     }
 
+    @Override
+    public List<Order> getReportOrder(String date) {
+        String sql = "SELECT employer, sum(income) income, type FROM `Order` where date LIKE '? %' GROUP BY employer, type;";
+
+        List<Order> list = jdbcTemplate.query(sql, new Object[]{date}, new BeanPropertyRowMapper<>(Order.class));
+
+        if(null != list && list.size()>0){
+            return list;
+        }else{
+            return null;
+        }
+    }
+
     /**
      * 添加订单
      * @param employer

@@ -10,9 +10,27 @@ import java.util.Map;
  * Created by marnon on 2017/8/14.
  */
 public interface HistoryDao {
+
+    /**
+     * 某类型的全部订单
+     * @param type
+     * @param employer
+     * @return
+     */
     List<Order> getOrder(String type, int employer);
+
+    /**
+     * 某日期某类型的全部订单
+     * @param type
+     * @param employer
+     * @param date
+     * @return
+     */
     List<Order> getOrder(String type, int employer, Date date);
+
     Order getOrder(String idOrder);
+
+    List<Order> getReportOrder(String date);
     int addOrder(String idOrder, int employer, int employee, String date, double income, String type, String ssc);
     void deleteOrder(String idOrder);
     void updateMoneyOfOrder(String idOrder, double income);
