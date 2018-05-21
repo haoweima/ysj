@@ -124,9 +124,6 @@ public class ReturnController {
         if(historyService.addOrder(tables, "return", d, map, request.getParameter("ssc"))){
             return "redirect:selectReturnPage?employer=" + map.get("employer") + "&tip=" + 1;
         }else return "redirect:selectReturnPage?employer=" + map.get("employer") + "&tip=" + 0;
-
-
-//        return "redirect:addChangePage";
     }
 
     /**

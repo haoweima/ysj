@@ -30,6 +30,11 @@
 	</properties>
 
 	<dependencies>
+		<dependency> 
+			<groupId>commons-configuration</groupId> 
+			<artifactId>commons-configuration</artifactId> 
+			<version>1.9</version> 
+		</dependency>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-jdbc</artifactId>
@@ -64,6 +69,17 @@
 			<artifactId>fastjson</artifactId>
 			<version>1.2.28</version>
 		</dependency>
+		<dependency>
+			<groupId>org.mybatis.spring.boot</groupId>
+			<artifactId>mybatis-spring-boot-starter</artifactId>
+			<version>1.2.0</version>
+		</dependency>
+
+		<dependency>
+			<groupId>mysql</groupId>
+			<artifactId>mysql-connector-java</artifactId>
+			<version>5.1.21</version>
+		</dependency>
 
 		<!--服务器-->
 		<dependency>
@@ -71,7 +87,6 @@
 			<artifactId>spring-boot-starter-tomcat</artifactId>
 			<scope>provided</scope>
 		</dependency>
-
 
 	</dependencies>
 

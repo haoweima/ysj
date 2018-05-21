@@ -39,8 +39,6 @@ public class HistoryDaoImlp implements HistoryDao {
             return null;
         }
     }
-
-
     /**
      * 某日期某类型的全部订单
      * @param type
