@@ -143,8 +143,6 @@ public class ReturnController {
         if(historyService.addOrder(tables, "change", d, map, request.getParameter("ssc"))){
             return "redirect:selectChangePage?employer=" + map.get("employer") + "&tip=" + 1;
         }else return "redirect:selectChangePage?employer=" + map.get("employer") + "&tip=" + 0;
-
-
     }
 
     @RequestMapping("/deleteOrder")
