@@ -48,20 +48,20 @@ public class MyInterceptor implements HandlerInterceptor {
 
         httpServletResponse.sendRedirect("login");
 
-//        System.out.println("has been interceped");
         return false;
     }
 
     @Override
     public void postHandle(HttpServletRequest httpServletRequest, HttpServletResponse httpServletResponse, Object o, ModelAndView modelAndView) throws Exception {
-//        tools.modelAddUser((int)httpServletRequest.getSession().getAttribute("employee"), modelAndView);
         HttpSession session = httpServletRequest.getSession();
         try{
             modelAndView.addObject("name", session.getAttribute("name"));
             if(session.getAttribute("employer") == session.getAttribute("employee")){
+                //管理员权限
                 modelAndView.addObject("power", 1);
             }
             else{
+                //员工权限
                 modelAndView.addObject("power", 0);
             }
         }catch (Exception e){
