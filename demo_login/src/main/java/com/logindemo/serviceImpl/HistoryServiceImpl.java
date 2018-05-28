@@ -5,6 +5,7 @@ import com.logindemo.domain.*;
 import com.logindemo.service.HistoryService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 import org.springframework.ui.Model;
 
 import java.util.Date;
@@ -66,6 +67,7 @@ public class HistoryServiceImpl implements HistoryService {
     }
 
     /**
+     * 添加订单和销售记录
      * @param tables 表单
      * @param type 订单类型
      * @param date 日期
@@ -73,6 +75,7 @@ public class HistoryServiceImpl implements HistoryService {
      * @param ssc 所属仓
      */
     @Override
+    @Transactional
     public boolean addOrder(List<Table> tables, String type, String date, Map map, String ssc) {
         double sum = 0;
         OrderDetail detail;
@@ -99,6 +102,7 @@ public class HistoryServiceImpl implements HistoryService {
                 break;
             }
             int goodsId = historyDao.getGoodsIdByName(table.getName());
+            //数据组装
             detail = new OrderDetail();
             detail.setIdOrder(idOrder);
             detail.setIdGoods(goodsId);
@@ -106,6 +110,7 @@ public class HistoryServiceImpl implements HistoryService {
             detail.setMoney(Double.parseDouble(table.getPrice()));
             detail.setOther(table.getOther());
             sum += Double.parseDouble(table.getPrice()) * Double.parseDouble(table.getNum());
+            //新增详细销售记录
             historyDao.addDetails(detail);
             if(type.equals("sale")) {
                 historyDao.saleGoods((int) map.get("employer"), goodsId, Integer.parseInt(table.getNum()), ssc);
