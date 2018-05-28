@@ -40,6 +40,12 @@ public class EmployController {
         return "add-employee";
     }
 
+    /**
+     * 添加新员工
+     * @param employee
+     * @param session
+     * @return
+     */
     @RequestMapping("/addEmp")
     public String addEmployer(ListComponent employee, HttpSession session){
         List<Employee> employeeList = employee.getEmployee();
