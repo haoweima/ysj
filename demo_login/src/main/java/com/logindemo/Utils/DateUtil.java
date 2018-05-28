@@ -19,4 +19,11 @@ public class DateUtil {
         return date;
     }
 
+    public static String getStringFromDate(Date d){
+        SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyyMMdd");
+        String date = simpleDateFormat.format(d);
+
+        return date;
+    }
+
 }
