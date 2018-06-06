@@ -11,8 +11,9 @@ public class ReportDomain {
     private String comeMoney;
     private String returnMoney;
     private String changeMoney;
-    private List<String> hotGoods;
-    private List<String> profitGoods;
+    private String selectDate;
+    private List<Integer> hotGoods;
+    private List<Integer> profitGoods;
 
     public String getSaleMoney() {
         return saleMoney;
@@ -46,19 +47,27 @@ public class ReportDomain {
         this.changeMoney = changeMoney;
     }
 
-    public List<String> getHotGoods() {
+    public List<Integer> getHotGoods() {
         return hotGoods;
     }
 
-    public void setHotGoods(List<String> hotGoods) {
+    public void setHotGoods(List<Integer> hotGoods) {
         this.hotGoods = hotGoods;
     }
 
-    public List<String> getProfitGoods() {
+    public List<Integer> getProfitGoods() {
         return profitGoods;
     }
 
-    public void setProfitGoods(List<String> profitGoods) {
+    public void setProfitGoods(List<Integer> profitGoods) {
         this.profitGoods = profitGoods;
+    }
+
+    public String getSelectDate() {
+        return selectDate;
+    }
+
+    public void setSelectDate(String selectDate) {
+        this.selectDate = selectDate;
     }
 }

@@ -1,6 +1,7 @@
 package com.logindemo.dao;
 
 import com.logindemo.domain.Goods;
+import com.logindemo.domain.OrderDetail;
 
 import java.util.List;
 
@@ -23,4 +24,7 @@ public interface StoreDao {
 
     //从商品中找进价最低的商品
     List<Goods> getLowSaleGoodsByUserId(int employer);
+
+    //查询商品的详细销售情况
+    List<OrderDetail> getDetailByIds(String goodsId, String dateS, String dateE);
 }

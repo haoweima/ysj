@@ -1,4 +1,4 @@
-package com.logindemo.daoImpl;
+package com.logindemo.dao.daoImpl;
 
 import com.logindemo.dao.UserDao;
 import com.logindemo.domain.Employee;

@@ -27,7 +27,7 @@ public class DateToRedis {
         Map<Integer, Integer> employerId = new HashMap<>();
 
         Date date = new Date();
-        String yesterday = DateUtil.getOffsetDateStr(date, 1);
+        String yesterday = DateUtil.getOffsetDateStr(date, 1, DateUtil.YYYYMMDD);
         List<Order> orders = historyDao.getReportOrder(yesterday);
 
         //填充每天的销售情况

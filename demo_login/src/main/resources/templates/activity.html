@@ -3,7 +3,7 @@
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <title>进货管理</title>
+    <title>活动智能规划</title>
     <link th:href="@{/css/bootstrap.min.css}" href="../static/css/bootstrap.min.css" type="text/css" rel="stylesheet">
     <link th:href="@{/css/person.css}" href="../static/css/person.css" type="text/css" rel="stylesheet">
     <!--<link th:href="@{/css/carousel.css}" href="../static/css/carousel.css" rel="stylesheet" type="text/css">-->
@@ -11,12 +11,9 @@
     <script th:src="@{/js/bootstrap.min.js}" src="../static/js/bootstrap.min.js"></script>
     <script th:src="@{/js/jquery-ui.min.js}" src="../static/js/jquery-ui.min.js"></script>
     <script th:src="@{/js/hideComponent.js}" src="../static/js/hideComponent.js"></script>
-
-    <!--<script th:src="@{/js/modernizr.min.js}" src="../static/js/modernizr.min.js"></script>-->
-    <!--<link th:href="@{/css/style.css}" href="../static/css/style.css" media="screen" rel="stylesheet">-->
-
+    <script th:src="@{/js/activity.js}" src="../static/js/activity.js"></script>
 </head>
-<body>
+<body style="background: url(../img/bg.jpg) center top repeat;">
 <div class="container">
     <div class="row clearfix">
         <div class="col-md-12 column">
@@ -28,7 +25,7 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    <a class="navbar-brand" href="/Mana/person" style="color: #ffffff; font-size: 24px;">易数家</a>
+                    <a class="navbar-brand" href="/Mana/person" style="color: #ffffff; font-size: 24px;" >易数家</a>
                 </div>
 
                 <div class="collapse navbar-collapse" style="background: #d1c7a5;" id="bs-example-navbar-collapse-1">
@@ -64,91 +61,53 @@
 
             </nav>
         </div>
-
-        <div class="col-md-3 column">
+    </div>
+    <div class="row">
+        <div class="col-md-1 column">
             <ul class="nav nav-stacked nav-pills">
-                <li >
-                    <a href="/Mana/person">快速操作</a>
-                </li>
-                <li>
-                    <a href="/Mana/sale/salePage">销售管理</a>
+                <li class="orange">
+                    <a href="/Mana/person" >快速操作</a>
                 </li>
                 <li class="orange">
-                    <a href="/Mana/come/comePage">进货管理</a>
+                    <a href="/Mana/sale/salePage" >销售管理</a>
                 </li>
-                <li>
-                    <a href="/Mana/return/returnPage">退换货管理</a>
+                <li class="orange">
+                    <a href="/Mana/come/comePage" >进货管理</a>
                 </li>
-                <li class="limit">
-                    <a href="/Mana/store/storePage">商铺近况</a>
+                <li class="orange">
+                    <a href="/Mana/return/returnPage" >退换管理</a>
                 </li>
-                <li class="limit">
-                    <a href="/Mana/invent/inventPage">库存管理</a>
+                <li class="orange limit">
+                    <a href="/Mana/store/storePage" >商铺近况</a>
                 </li>
-                <li class="limit">
-                    <a href="/Mana/employ/employPage">员工管理</a>
+                <li class="orange limit">
+                    <a href="/Mana/invent/inventPage" >库存管理</a>
+                </li>
+                <li class="orange limit">
+                    <a href="/Mana/employ/employPage" >员工管理</a>
                 </li>
             </ul>
         </div>
-        <div class="col-md-6 column">
-            <div class="row clearfix">
-                <div class="col-md-4 column">
-                    <!--新增进货-->
-                    <a href="addPage">
-                    <img alt="160x160" src="../img/img-btn-02-01.png"
-                         class="img-thumbnail" th:src="@{/img/img-btn-02-01.png}"/>
-                    </a>
-                </div>
-                <div class="col-md-4 column">
-                    <!--进货历史-->
-                    <a href="selectPage?employer=1">
-                    <img alt="160x160" src="../img/img-btn-07-01.png"
-                         class="img-thumbnail" th:src="@{/img/img-btn-07-01.png}"/>
-                    </a>
-                </div>
-                <div class="col-md-4 column">
-                    <a href="">
-                    <img alt="160x160" src="../img/img-btn-05-01.png"
-                         class="img-thumbnail" th:src="@{/img/img-btn-05-01.png}"/>
-                    </a>
-                </div>
-            </div>
-            <div class="row clearfix">
-                <div class="col-md-4 column">
-                    <a href="">
-                    <img alt="160x160" src="../img/img-btn-05-01.png"
-                         class="img-thumbnail" th:src="@{/img/img-btn-05-01.png}"/>
-                    </a>
-                </div>
-                <div class="col-md-4 column">
-                    <a href="">
-                    <img alt="160x160" src="../img/img-btn-05-01.png"
-                         class="img-thumbnail" th:src="@{/img/img-btn-05-01.png}"/>
-                    </a>
-                </div>
-                <div class="col-md-4 column">
-                    <a href="">
-                    <img alt="160x160" src="../img/img-btn-05-01.png"
-                         class="img-thumbnail" th:src="@{/img/img-btn-05-01.png}"/>
-                    </a>
+        <div class="col-md-11 column">
+            <div class="row">
+                <div class="col-md-12 column">
+                    <table class="table table-striped table-bordered">
+                        <thead>
+                        <h3 style="color: #771a1a">活动智能规划</h3>
+                        <h5 style="color: #771a1a">根据一个月内销售情况规划</h5>
+                        </thead>
+                        <tbody>
+                        </tbody>
+                    </table>
                 </div>
             </div>
         </div>
-        <div class="col-md-3 column">
-            <div class="alert alert-success alert-dismissable">
-                <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
-                <h4>
-                    小提示！
-                </h4>
-                <strong>进货管理</strong>  在该页面可以查询进货记录，新增进货等操作
-            </div>
-        </div>
-    </div>
 
-    <footer style="position: fixed; bottom:10px;">
-        <p class="pull-right"></p>
-        <p>&copy; Made by Marnon, OUC &middot; </p>
-    </footer>
+        <footer>
+            <p class="pull-right"></p>
+            <p>&copy; Made by Marnon, OUC &middot; </p>
+        </footer>
+    </div>
 </div>
 </body>
 </html>
